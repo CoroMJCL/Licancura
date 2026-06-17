@@ -42,31 +42,21 @@
   <main id="main">
     <!-- HERO -->
     <section id="hero" aria-label="Portada">
-      <!-- Banda de colores identitaria — paleta del logo -->
-      <div class="hero-color-band" aria-hidden="true">
-        <span style="background:#8B3A8B"></span>
-        <span style="background:#C94040"></span>
-        <span style="background:#D4403A"></span>
-        <span style="background:#C87830"></span>
-        <span style="background:#E8A020"></span>
-        <span style="background:#7A9A3A"></span>
-        <span style="background:#3A8A7A"></span>
-        <span style="background:#3A6A9A"></span>
-        <span style="background:#2A2A2A"></span>
-        <span style="background:#888880"></span>
-      </div>
+
+      <!-- Columna izquierda: contenido -->
       <div class="hero-body">
         <p class="hero-eyebrow">Mármoles Licancura · Expertos en piedras · Chile</p>
-        <h1 class="hero-h1">Mármoles<br><em>Licancura<span class="nav-logo__dot" style="width:10px;height:10px;margin-left:6px;display:inline-block;vertical-align:super" aria-hidden="true"></span></em></h1>
-        <p class="hero-tagline">Expertos en piedras</p>
-      </div>
-      <div class="hero-foot">
-        <p class="hero-sub">Trabajo artesanal en mármol, granito y piedra natural. Para proyectos residenciales y comerciales en todo Chile.</p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn--red">Ver proyectos</a>
-          <a href="#cotizador" class="btn btn--ghost-dark">Cotizar ahora</a>
+        <div class="hero-body__main">
+          <h1 class="hero-h1">
+            Mármoles<br>
+            <em>Licancura<span class="nav-logo__dot" style="width:10px;height:10px;margin-left:6px;display:inline-block;vertical-align:super" aria-hidden="true"></span></em>
+          </h1>
+          <p class="hero-tagline">Expertos en piedras</p>
         </div>
-        <div class="hero-palette" aria-label="Paleta de materiales">
+      </div>
+
+      <!-- Columna derecha: paleta de materiales — identidad visual -->
+      <div class="hero-palette-col" aria-label="Paleta de materiales">
         <div class="hero-palette__grid">
           <span style="background:#7B2D8B" title="Mármol Violeta"></span>
           <span style="background:#C450C4" title="Mármol Rosa"></span>
@@ -89,9 +79,18 @@
           <span style="background:#8A8A80" title="Gris Medio"></span>
           <span style="background:#D4C8B8" title="Crema Marfil"></span>
         </div>
-        <p class="hero-palette__label">Nuestra paleta de materiales</p>
+        <p class="hero-palette__label">Paleta de materiales</p>
       </div>
+
+      <!-- Fila inferior: descripción y botones -->
+      <div class="hero-foot">
+        <p class="hero-sub">Trabajo artesanal en mármol, granito y piedra natural. Para proyectos residenciales y comerciales en todo Chile.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn--red">Ver proyectos</a>
+          <a href="#cotizador" class="btn btn--ghost-dark">Cotizar ahora</a>
+        </div>
       </div>
+
     </section>
 
     <!-- MARQUEE -->
@@ -269,7 +268,7 @@
     </div>
     <div class="footer-bottom">
       <span>© <span id="yr"></span> Mármoles Licancura — Todos los derechos reservados</span>
-      <span>Hecho en Chile 🇨🇱</span>
+      <span>Hecho en Chile 🇨🇱 &nbsp;·&nbsp; Desarrollo <a href="https://www.tempvs7.cl" target="_blank" rel="noopener" class="footer-dev">TEMPVS7</a></span>
     </div>
   </footer>
 

@@ -362,6 +362,12 @@ footer { background: var(--ink); padding: 64px 56px 24px; }
 .footer-links a, .footer-links span { font-size: 13px; color: rgba(255,255,255,.28); transition: color .25s; }
 .footer-links a:hover { color: var(--white); }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.06); padding-top: 22px; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.18); flex-wrap: wrap; gap: 8px; }
+.footer-dev {
+  color: var(--red); font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; font-size: 10px;
+  transition: color .25s;
+}
+.footer-dev:hover { color: #fff; }
 
 /* Banda de colores en footer */
 .footer-palette { display: flex; height: 3px; margin-bottom: 24px; }
