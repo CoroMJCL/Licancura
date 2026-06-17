@@ -142,7 +142,10 @@ button { cursor: pointer; font-family: var(--dm); }
 
 /* ─── HERO ─── */
 #hero {
-  min-height: 100vh; background: var(--ink);
+  min-height: 100vh;
+  background:
+    linear-gradient(to right, rgba(17,17,17,0.92) 55%, rgba(17,17,17,0.55) 100%),
+    url('../img/hero.jpg') center center / cover no-repeat;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: 1fr auto;
