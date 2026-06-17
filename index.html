@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mármoles Licancura — Expertos en piedras. Mármol, granito y piedra natural para proyectos residenciales y comerciales en Chile.">
+  <meta property="og:title" content="Mármoles Licancura — Expertos en piedras">
+  <meta property="og:type" content="website">
+  <title>Mármoles Licancura — Expertos en piedras</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <header>
+    <nav id="nav" role="navigation" aria-label="Menú principal">
+      <a href="#hero" class="nav-logo">Licancura<span class="nav-logo__dot" aria-hidden="true"></span></a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#cotizador">Cotizador</a></li>
+        <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+      </ul>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+    <nav id="mobileMenu" aria-label="Menú móvil">
+      <a href="#about"     onclick="closeMenu()">Nosotros</a>
+      <a href="#services"  onclick="closeMenu()">Servicios</a>
+      <a href="#projects"  onclick="closeMenu()">Proyectos</a>
+      <a href="#cotizador" onclick="closeMenu()">Cotizador</a>
+      <a href="#contacto"  onclick="closeMenu()">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="hero" aria-label="Portada">
+      <div class="hero-body">
+        <p class="hero-eyebrow">Mármoles Licancura · Expertos en piedras · Chile</p>
+        <h1 class="hero-h1">Mármoles<br><em>Licancura<span class="nav-logo__dot" style="width:10px;height:10px;margin-left:6px;display:inline-block;vertical-align:super" aria-hidden="true"></span></em></h1>
+      </div>
+      <div class="hero-foot">
+        <p class="hero-sub">Trabajo artesanal en mármol, granito y piedra natural. Para proyectos residenciales y comerciales en todo Chile.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn--red">Ver proyectos</a>
+          <a href="#cotizador" class="btn btn--ghost-dark">Cotizar ahora</a>
+        </div>
+        <p class="hero-meta">Est. 2004<br>Santiago, Chile</p>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__inner">
+        <span class="marquee__item">Mármol</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Granito</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Travertino</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Cuarcita</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Mesones</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Revestimientos</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Baños</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Pisos</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Restauración</span><span class="marquee__sep"> ◆ </span>
+        <span class="marquee__item">Mármol</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Granito</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Travertino</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Cuarcita</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Mesones</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Revestimientos</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Baños</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Pisos</span><span class="marquee__sep"> ◆ </span><span class="marquee__item">Restauración</span><span class="marquee__sep"> ◆ </span>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div id="stats" role="list">
+      <div class="stat reveal" role="listitem"><div class="stat__n"><span id="s-proyectos" data-val="800">800</span><sup>+</sup></div><div class="stat__l">Proyectos realizados</div></div>
+      <div class="stat reveal" role="listitem"><div class="stat__n"><span id="s-anos" data-val="20">20</span></div><div class="stat__l">Años de experiencia</div></div>
+      <div class="stat reveal" role="listitem"><div class="stat__n"><span id="s-clientes" data-val="500">500</span><sup>+</sup></div><div class="stat__l">Clientes satisfechos</div></div>
+      <div class="stat reveal" role="listitem"><div class="stat__n"><span id="s-maestros" data-val="12">12</span></div><div class="stat__l">Maestros artesanos</div></div>
+    </div>
+
+    <!-- NOSOTROS -->
+    <section id="about" aria-labelledby="about-h">
+      <div class="about-text reveal">
+        <span class="tag">Quiénes somos</span>
+        <h2 class="section-h" id="about-h" id="txt-about-title">Más de dos décadas de oficio y precisión.</h2>
+        <p class="section-p" id="txt-about-body">Somos una empresa familiar fundada en Chile, especializada en la instalación y fabricación de superficies en piedra natural.</p>
+        <a href="#contacto" class="btn btn--ink">Hablar con nosotros</a>
+      </div>
+      <div class="about-visual">
+        <div class="about-img"><div class="about-img__placeholder">Fotografía taller / obra</div></div>
+        <div class="about-quote reveal">
+          <p class="about-quote__text" id="txt-quote">"La calidad se ve. La excelencia se siente."</p>
+          <p class="about-quote__sub"  id="txt-quote-sub">Mármoles Licancura · Desde 2004</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="services" aria-labelledby="services-h">
+      <div class="services-top">
+        <div><span class="tag">Lo que hacemos</span><h2 class="section-h" id="services-h">Servicios<br>especializados</h2></div>
+        <p class="section-p">Para familias, constructoras, hoteles y proyectos comerciales en todo Chile.</p>
+      </div>
+      <div class="services-grid">
+        <article class="svc reveal"><span class="svc__num" aria-hidden="true">01</span><span class="svc__name" id="srv1-name">Mesones y Encimeras</span><p class="svc__desc" id="srv1-desc">Diseño y fabricación a medida en mármol, granito y cuarcita. Cortes, bordes y acabados personalizados para cocinas y baños.</p><span class="svc__arrow" aria-hidden="true"></span></article>
+        <article class="svc reveal"><span class="svc__num" aria-hidden="true">02</span><span class="svc__name" id="srv2-name">Revestimientos</span><p class="svc__desc" id="srv2-desc">Pisos, paredes y fachadas en piedra natural. Instalación profesional con garantía de terminación impecable.</p><span class="svc__arrow" aria-hidden="true"></span></article>
+        <article class="svc reveal"><span class="svc__num" aria-hidden="true">03</span><span class="svc__name" id="srv3-name">Baños y Spa</span><p class="svc__desc" id="srv3-desc">Ambientes premium con selección exclusiva de materiales naturales. Desde el plano hasta la entrega final.</p><span class="svc__arrow" aria-hidden="true"></span></article>
+        <article class="svc reveal"><span class="svc__num" aria-hidden="true">04</span><span class="svc__name" id="srv4-name">Restauración</span><p class="svc__desc" id="srv4-desc">Recuperación y tratamiento de superficies en piedra. Pulido, sellado y rejuvenecimiento de instalaciones existentes.</p><span class="svc__arrow" aria-hidden="true"></span></article>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="projects" aria-labelledby="projects-h">
+      <div class="projects-head">
+        <div><span class="tag">Portafolio</span><h2 class="section-h" id="projects-h">Proyectos<br>realizados</h2></div>
+        <a href="#contacto" class="btn btn--red">Iniciar proyecto</a>
+      </div>
+      <div class="carousel-viewport" role="region" aria-label="Carrusel de proyectos">
+        <div class="carousel-track" id="carTrack"></div>
+      </div>
+      <div class="carousel-controls">
+        <button class="car-btn" id="carPrev" aria-label="Anterior">&#8592;</button>
+        <button class="car-btn" id="carNext" aria-label="Siguiente">&#8594;</button>
+        <div class="car-dots" id="carDots" role="tablist"></div>
+      </div>
+    </section>
+
+    <!-- COTIZADOR -->
+    <section id="cotizador" aria-labelledby="cot-h">
+      <div class="cotizador-head reveal">
+        <span class="tag" style="color:rgba(212,64,58,.75)">Herramienta online</span>
+        <h2 class="section-h section-h--light" id="cot-h">Cotizador<br>de proyectos</h2>
+      </div>
+      <div class="cotizador-grid">
+        <div class="cot-col cot-col--form">
+          <span class="cot-col-label">Configura tu proyecto</span>
+          <div class="field"><label for="q-mat">Material</label><select id="q-mat" onchange="calcQuote()"></select></div>
+          <div class="field"><label for="q-trab">Tipo de trabajo</label><select id="q-trab" onchange="calcQuote()"></select></div>
+          <div class="field"><label for="q-m2">Superficie (m²)</label><input type="number" id="q-m2" value="5" min="1" step="0.5" oninput="calcQuote()"></div>
+          <div class="field"><label for="q-acab">Acabado</label><select id="q-acab" onchange="calcQuote()"></select></div>
+        </div>
+        <div class="cot-col cot-col--result">
+          <span class="cot-col-label">Resumen estimado</span>
+          <div id="q-detail"><p class="qr-empty">Completa los campos para ver el presupuesto...</p></div>
+          <div id="q-total-wrap" style="display:none">
+            <div class="qr-total"><p class="qr-total__label">Total estimado (con IVA 19%)</p><p class="qr-total__num" id="q-total-num">—</p></div>
+            <p class="qr-note">Valor referencial. Sujeto a visita técnica. No incluye traslado.</p>
+          </div>
+          <button class="btn btn--red btn--full" onclick="sendQuoteWA()" style="margin-top:28px">Solicitar cotización formal →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" aria-labelledby="contact-h">
+      <span class="tag">Hablemos</span>
+      <h2 class="section-h" id="contact-h">Contacto</h2>
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="contact-info-item"><div class="contact-info-item__dot" aria-hidden="true"></div><div><p class="contact-info-item__label">Teléfono</p><p class="contact-info-item__val" id="txt-phone">+56 2 2345 6789</p></div></div>
+          <div class="contact-info-item"><div class="contact-info-item__dot" aria-hidden="true"></div><div><p class="contact-info-item__label">Email</p><p class="contact-info-item__val" id="txt-email">contacto@licancura.cl</p></div></div>
+          <div class="contact-info-item"><div class="contact-info-item__dot" aria-hidden="true"></div><div><p class="contact-info-item__label">Dirección</p><p class="contact-info-item__val" id="txt-addr">Av. Principal 1234, Santiago</p></div></div>
+          <div class="contact-info-item"><div class="contact-info-item__dot" aria-hidden="true"></div><div><p class="contact-info-item__label">Horario</p><p class="contact-info-item__val" id="txt-hora">Lun–Vie 9:00–18:00 · Sáb 9:00–13:00</p></div></div>
+        </div>
+        <form class="reveal" onsubmit="sendContact(event)" novalidate>
+          <div class="cf-row">
+            <div class="cf-field"><label for="cf-n">Nombre *</label><input type="text" id="cf-n" placeholder="Tu nombre" required></div>
+            <div class="cf-field"><label for="cf-t">Teléfono</label><input type="tel" id="cf-t" placeholder="+56 9 ..."></div>
+          </div>
+          <div class="cf-field"><label for="cf-e">Email *</label><input type="email" id="cf-e" placeholder="correo@ejemplo.cl" required></div>
+          <div class="cf-field">
+            <label for="cf-tipo">Tipo de proyecto</label>
+            <select id="cf-tipo"><option value="">Seleccionar...</option><option>Mesón / Encimera</option><option>Revestimiento</option><option>Baño completo</option><option>Piso</option><option>Restauración</option><option>Proyecto comercial</option><option>Otro</option></select>
+          </div>
+          <div class="cf-field"><label for="cf-m">Mensaje</label><textarea id="cf-m" placeholder="Cuéntanos los detalles de tu proyecto..."></textarea></div>
+          <button type="submit" class="btn btn--ink btn--full">Enviar mensaje →</button>
+          <div class="cf-success" id="cf-ok" role="alert">✓ &nbsp;¡Mensaje enviado! Nos pondremos en contacto pronto.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Licancura<span class="footer-logo__dot" aria-hidden="true"></span></div>
+        <p class="footer-tagline">Expertos en piedras. Trabajo artesanal en mármol, granito y piedra natural para proyectos que merecen durar.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Navegación</p>
+        <ul class="footer-links">
+          <li><a href="#about">Nosotros</a></li><li><a href="#services">Servicios</a></li>
+          <li><a href="#projects">Proyectos</a></li><li><a href="#cotizador">Cotizador</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <ul class="footer-links">
+          <li><span id="ft-phone"></span></li>
+          <li><span id="ft-email"></span></li>
+          <li><span id="ft-addr"></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="yr"></span> Mármoles Licancura — Todos los derechos reservados</span>
+      <span>Hecho en Chile 🇨🇱</span>
+    </div>
+  </footer>
+
+  <a class="wa-float" id="waBtn" href="#" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <button class="adm-trigger" onclick="openLogin()" aria-label="Panel de administración">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+  </button>
+
+  <!-- MODAL LOGIN -->
+  <div class="overlay" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="login-title">
+    <div class="modal modal--sm">
+      <div class="modal-hd"><span class="modal-hd__title" id="login-title">Acceso administrador</span><button class="modal-close" onclick="closeOverlay('loginOverlay')" aria-label="Cerrar">×</button></div>
+      <div class="modal-bd">
+        <div class="adm-f"><label for="l-email">Email</label><input class="adm-input" type="email" id="l-email" placeholder="admin@licancura.cl" autocomplete="email"></div>
+        <div class="adm-f"><label for="l-pass">Contraseña</label><input class="adm-input" type="password" id="l-pass" placeholder="••••••••" autocomplete="current-password"></div>
+        <button id="l-btn" class="adm-save" onclick="doLogin()">Ingresar</button>
+        <div class="login-spinner" id="l-spin"></div>
+        <p class="login-err" id="l-err" role="alert"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL ADMIN -->
+  <div class="overlay" id="adminOverlay" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+    <div class="modal">
+      <div class="modal-hd">
+        <span class="modal-hd__title" id="admin-title">Panel de administración</span>
+        <div style="display:flex;gap:12px;align-items:center">
+          <button id="admin-refresh" class="adm-add" onclick="loadAdminData()">Actualizar</button>
+          <button class="adm-add" onclick="doLogout()" style="color:var(--mid)">Cerrar sesión</button>
+          <button class="modal-close" onclick="closeOverlay('adminOverlay')" aria-label="Cerrar">×</button>
+        </div>
+      </div>
+      <div class="modal-bd">
+        <div class="tab-bar" role="tablist">
+          <button class="tab-btn active" onclick="swTab('p-cont',this)">Contenido</button>
+          <button class="tab-btn" onclick="swTab('p-precios',this)">Precios</button>
+          <button class="tab-btn" onclick="swTab('p-proy',this)">Proyectos</button>
+          <button class="tab-btn" onclick="swTab('p-cots',this)">Cotizaciones</button>
+          <button class="tab-btn" onclick="swTab('p-msgs',this)">Mensajes<span class="notif-badge" id="msg-badge" style="display:none">0</span></button>
+          <button class="tab-btn" onclick="swTab('p-conf',this)">Configuración</button>
+        </div>
+
+        <div class="tab-pane active" id="p-cont">
+          <div class="adm-sec"><span class="adm-sec-label">Sección Nosotros</span>
+            <div class="adm-f"><label>Título</label><input class="adm-input" id="a-title"></div>
+            <div class="adm-f"><label>Texto</label><textarea class="adm-input adm-input--ta" id="a-body" rows="3"></textarea></div>
+            <div class="adm-f"><label>Frase destacada</label><input class="adm-input" id="a-quote"></div>
+            <div class="adm-f"><label>Subtítulo frase</label><input class="adm-input" id="a-qsub"></div>
+            <div class="adm-grid-2">
+              <div class="adm-f"><label>N° Proyectos</label><input class="adm-input" id="a-s-proy"></div>
+              <div class="adm-f"><label>Años</label><input class="adm-input" id="a-s-anos"></div>
+              <div class="adm-f"><label>Clientes</label><input class="adm-input" id="a-s-cli"></div>
+              <div class="adm-f"><label>Maestros</label><input class="adm-input" id="a-s-eq"></div>
+            </div>
+          </div>
+          <div class="adm-sec"><span class="adm-sec-label">Servicios</span><div id="srv-editor"></div></div>
+          <button id="btn-save-cont" class="adm-save" onclick="saveCont()">Guardar contenido</button>
+        </div>
+
+        <div class="tab-pane" id="p-precios">
+          <div class="adm-sec"><span class="adm-sec-label">Materiales — precio base ($/m²)</span><div id="mat-editor"></div><button class="adm-add" onclick="addPrice('mat')">+ Agregar material</button></div>
+          <div class="adm-sec"><span class="adm-sec-label">Tipos de trabajo — multiplicador</span><div id="trab-editor"></div><button class="adm-add" onclick="addPrice('trab')">+ Agregar tipo</button></div>
+          <div class="adm-sec"><span class="adm-sec-label">Acabados — extra por m²</span><div id="acab-editor"></div><button class="adm-add" onclick="addPrice('acab')">+ Agregar acabado</button></div>
+          <button id="btn-save-prices" class="adm-save" onclick="savePrices()">Guardar precios</button>
+        </div>
+
+        <div class="tab-pane" id="p-proy">
+          <div class="adm-sec"><span class="adm-sec-label">Agregar nuevo proyecto</span>
+            <div class="adm-f"><label>Nombre *</label><input class="adm-input" id="np-n" placeholder="Ej: Cocina Residencial Vitacura"></div>
+            <div class="adm-f"><label>Categoría *</label><input class="adm-input" id="np-c" placeholder="Ej: Mesón Mármol Calacatta"></div>
+            <div class="adm-f"><label>Descripción</label><input class="adm-input" id="np-d" placeholder="Material y características"></div>
+            <div class="adm-f">
+              <label>Imagen del proyecto</label>
+              <div class="img-upload-wrap"><input type="file" id="np-file" accept="image/*"><p class="img-upload-label">📷 Haz clic o arrastra una imagen aquí<br><small>JPG, PNG, WEBP — máx. 5MB</small></p></div>
+              <img id="np-preview" class="img-preview" alt="Vista previa">
+            </div>
+            <div class="adm-f"><label>O pega una URL de imagen</label><input class="adm-input" id="np-i" placeholder="https://..."></div>
+            <button id="btn-add-proj" class="adm-save" onclick="addProject()">Agregar proyecto</button>
+          </div>
+          <div class="adm-sec"><span class="adm-sec-label">Proyectos publicados</span><div id="proj-editor"></div></div>
+        </div>
+
+        <div class="tab-pane" id="p-cots">
+          <div class="adm-sec"><span class="adm-sec-label">Últimas 50 cotizaciones</span><div id="cot-list"></div></div>
+        </div>
+
+        <div class="tab-pane" id="p-msgs">
+          <div class="adm-sec"><span class="adm-sec-label">Mensajes recibidos</span><div id="cont-list"></div></div>
+        </div>
+
+        <div class="tab-pane" id="p-conf">
+          <div class="adm-sec"><span class="adm-sec-label">Datos de contacto y WhatsApp</span>
+            <div class="adm-f"><label>Teléfono visible en el sitio</label><input class="adm-input" id="a-ph"></div>
+            <div class="adm-f"><label>WhatsApp (con código país, sin +) ej: 56912345678</label><input class="adm-input" id="a-wa"></div>
+            <div class="adm-f"><label>Email</label><input class="adm-input" id="a-em"></div>
+            <div class="adm-f"><label>Dirección</label><input class="adm-input" id="a-ad"></div>
+            <div class="adm-f"><label>Horario de atención</label><input class="adm-input" id="a-ho"></div>
+          </div>
+          <button id="btn-save-config" class="adm-save" onclick="saveConfig()">Guardar configuración</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

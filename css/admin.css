@@ -1,0 +1,102 @@
+/* css/admin.css — Panel de administración Licancura */
+
+/* ─── OVERLAY Y MODAL ─── */
+.overlay {
+  position: fixed; inset: 0; z-index: 9000;
+  background: rgba(17,17,17,.82); display: none;
+  align-items: center; justify-content: center;
+  backdrop-filter: blur(6px); padding: 16px;
+}
+.overlay.open { display: flex; }
+
+.modal {
+  background: var(--cream); width: 100%;
+  max-width: 780px; max-height: 92vh; overflow-y: auto;
+}
+.modal--sm { max-width: 400px; }
+
+.modal-hd {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 28px 36px; border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; background: var(--cream); z-index: 1;
+}
+.modal-hd__title { font-family: var(--syne); font-size: 18px; font-weight: 700; color: var(--ink); }
+.modal-close { background: none; border: none; font-size: 28px; color: var(--mid); line-height: 1; padding: 0 2px; transition: color .2s; cursor: pointer; }
+.modal-close:hover { color: var(--ink); }
+.modal-bd { padding: 36px; }
+
+/* ─── TABS ─── */
+.tab-bar { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 28px; overflow-x: auto; }
+.tab-bar::-webkit-scrollbar { height: 0; }
+.tab-btn { font-family: var(--dm); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); background: none; border: none; padding: 11px 20px; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; white-space: nowrap; cursor: pointer; }
+.tab-btn.active { color: var(--ink); border-bottom-color: var(--red); }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* ─── CAMPOS ADMIN ─── */
+.adm-sec { margin-bottom: 28px; }
+.adm-sec-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); display: block; }
+.adm-f { margin-bottom: 12px; }
+.adm-f label { display: block; font-size: 11px; color: var(--mid); margin-bottom: 5px; }
+.adm-input { width: 100%; padding: 10px 12px; border: 1px solid var(--border); font-family: var(--dm); font-size: 13px; color: var(--ink); outline: none; background: var(--white); border-radius: 0; transition: border-color .25s; }
+.adm-input:focus { border-color: var(--red); }
+.adm-input--ta { resize: vertical; min-height: 80px; }
+.adm-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.adm-grid-3 { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; align-items: center; margin-bottom: 10px; }
+.adm-del { background: none; border: none; font-size: 20px; color: rgba(17,17,17,.28); padding: 6px; transition: color .2s; cursor: pointer; }
+.adm-del:hover { color: #c0392b; }
+.adm-add { font-size: 11px; color: var(--red); background: none; border: none; font-family: var(--dm); letter-spacing: 1px; text-decoration: underline; margin-top: 8px; cursor: pointer; display: inline-block; }
+.adm-save { background: var(--ink); color: #fff; border: none; padding: 14px 24px; font-family: var(--dm); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; width: 100%; margin-top: 8px; transition: background .25s; cursor: pointer; }
+.adm-save:hover { background: var(--red); }
+.adm-save:disabled { background: var(--mid); cursor: not-allowed; }
+
+/* ─── PROYECTO ROW ─── */
+.proj-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border: 1px solid var(--border); margin-bottom: 8px; gap: 12px; }
+.proj-row__info { flex: 1; min-width: 0; }
+.proj-row__name { font-size: 13px; font-weight: 500; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.proj-row__cat { font-size: 11px; color: var(--mid); margin-top: 2px; }
+.proj-row__img { width: 48px; height: 40px; object-fit: cover; flex-shrink: 0; background: var(--border); }
+
+/* ─── UPLOAD IMAGEN ─── */
+.img-upload-wrap { border: 2px dashed var(--border); padding: 20px; text-align: center; cursor: pointer; transition: border-color .25s; position: relative; }
+.img-upload-wrap:hover { border-color: var(--red); }
+.img-upload-wrap input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+.img-upload-label { font-size: 12px; color: var(--mid); }
+.img-preview { width: 100%; max-height: 160px; object-fit: cover; margin-top: 12px; display: none; }
+
+/* ─── TABLA COTIZACIONES ─── */
+.cot-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.cot-table th { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid); font-weight: 600; padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+.cot-table td { padding: 11px 12px; border-bottom: 1px solid var(--border); color: var(--ink); }
+.cot-table tr:last-child td { border-bottom: none; }
+.cot-table .total { font-weight: 600; color: var(--red); }
+
+/* ─── TABLA CONTACTOS ─── */
+.msg-row { padding: 16px; border: 1px solid var(--border); margin-bottom: 10px; }
+.msg-row.unread { border-left: 3px solid var(--red); }
+.msg-row__header { display: flex; justify-content: space-between; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+.msg-row__name { font-size: 13px; font-weight: 600; color: var(--ink); }
+.msg-row__date { font-size: 11px; color: var(--mid); }
+.msg-row__meta { font-size: 11px; color: var(--mid); margin-bottom: 8px; }
+.msg-row__text { font-size: 13px; color: var(--ink); line-height: 1.6; }
+.msg-mark { font-size: 11px; color: var(--red); background: none; border: none; cursor: pointer; text-decoration: underline; margin-top: 8px; display: inline-block; font-family: var(--dm); }
+
+/* ─── LOGIN ─── */
+.login-err { font-size: 12px; color: #c0392b; margin-top: 10px; display: none; }
+.login-spinner { display: none; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; margin: 0 auto; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── BADGE NOTIF ─── */
+.notif-badge { display: inline-block; background: var(--red); color: #fff; font-size: 9px; font-weight: 700; border-radius: 10px; padding: 2px 6px; margin-left: 6px; vertical-align: middle; }
+
+/* ─── RESPONSIVE ADMIN ─── */
+@media (max-width: 768px) {
+  .modal-hd { padding: 20px 24px; }
+  .modal-bd { padding: 24px; }
+  .adm-grid-2 { grid-template-columns: 1fr; }
+  .adm-grid-3 { grid-template-columns: 1fr auto; }
+  .adm-grid-3 input:first-child { grid-column: 1 / -1; }
+  .tab-btn { padding: 10px 14px; font-size: 10px; }
+  .cot-table { font-size: 11px; }
+  .cot-table th, .cot-table td { padding: 8px; }
+}
